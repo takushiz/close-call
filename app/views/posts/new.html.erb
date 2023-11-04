@@ -1,0 +1,7 @@
+<%= form_with(model: @post, local: true) do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+  <%= f.text_field :title, placeholder: "例：ミラーマットを端に貼ってしまった" %>
+  <%= f.text_field :content, placeholder: "詳細 例：捨て板があるのに端っこに貼ってしまい、捨て板と位置が合わなくなるところだった。" %>
+  <%= f.submit "投稿する" ,class: "btn" %>
+<% end %>
