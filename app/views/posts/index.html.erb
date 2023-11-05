@@ -1,17 +1,27 @@
-<h1>ヒヤリハット一覧</h1>
 
-<p><%= link_to "投稿する", new_post_path %></p>
+<header class="header">
+  <div class="header-left"></div>
+  <div class="header-right"><%= link_to image_tag("/images/icon-write.gif"), new_post_path, class:"icon-write" %></div>
+</header>
 
+<div class="contents">
 <% @posts.each do |post| %>
-<div class="message-box">
+<div class="message-box
+  <%= "bgColor01" if post.genre_id == 2 %>">
   <div class="message-top">
-    <span class="number">No.<%= post.id %></span>
+    <span class="number"><%= post.id %>.</span>
     <span class="title"><%= post.title %></span>
-    <span class="genre"><%= post.genre.name %></span>
-    <span class="name">報告者:<%= post.name %></span>
+    <div class="message-top-right">
+      <span class="genre"><%= post.genre.name %></span>
+      <span class="name"><%= post.name %></span>
+    </div>
   </div>
-  <span class="content">詳 細:<%= post.content %></span>
-  <span class="date"><%= post.created_at.to_s(:datetime_jp)%></span>  
+  <div class="message-bottom">
+    <span class="content">詳 細:<%= post.content %></span>
+    <span class="date"><%= post.created_at.to_s(:datetime_jp)%></span>  
+  </div>
 </div>
-</div>
+
 <% end %>
+
+</div>
