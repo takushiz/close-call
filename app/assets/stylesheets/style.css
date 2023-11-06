@@ -1,14 +1,17 @@
 /********* header **********/
 
+
 html {
   overflow-x: hidden;
 }
 
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   height: 50px;
-  width: 1334px;
+  max-width: 1334px;
+  width: 90vw;
   margin: 0 auto;
 }
 .icon-write {
@@ -24,13 +27,18 @@ header {
 /********* contents ********/
 
 .contents {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  background: url(/images/public_bg_01.gif) repeat-y center center;
+  font-family: 'meiryo', 'メイリオ', sans-serif;
+  color: #333;
+}
+.message-box-wrap {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  background: url(/images/public_bg_01.gif) repeat-y center center;
 }
 .message-box {
   box-sizing: border-box; 
@@ -102,7 +110,6 @@ header {
   text-align: right;
   font-size: 10px;
 }
-
 @media (max-width: 590px) {
   header {
     width: 90%;
