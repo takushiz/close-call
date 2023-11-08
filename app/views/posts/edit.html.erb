@@ -1,0 +1,19 @@
+<div class="contents">
+  <div class="form-wrap">
+  <div class="message-form">
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="form-title">
+      <span class="title"><%= f.text_field :title, placeholder: "タイトルを入力 例：ミラーマットを端に貼ってしまった" %></span>
+    </div>
+    <div class="form-status">
+      <span><%= f.text_field :name, placeholder: "投稿者" %></span>
+      <span><%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %></span>
+    </div>
+    <div class="form-content">
+      <span class="content"><%= f.text_area :content, rows:"4", placeholder: "詳細を入力 例：捨て板があるのに端っこに貼ってしまい、捨て板と位置が合わなくなるところだった。" %></span>
+    </div>
+    <div class="submit"><%= f.submit "更新する" ,class: "btn" %></div>
+  <% end %>
+  </div>
+  </div>
+</div>

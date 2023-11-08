@@ -15,6 +15,7 @@
       <span class="content">詳 細:<%= post.content %></span>
       <div class="message-bottom-under">
         <span class="button"><%= link_to "削除", post_path(post.id), method: :delete %></span>
+        <span class="button"><%= link_to "編集", edit_post_path(post.id)%></span>
         <span class="date"><%= post.created_at.to_s(:datetime_jp)%></span>
       </div>
     </div>
