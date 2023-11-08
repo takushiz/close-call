@@ -1,22 +1,22 @@
 
 <div class="contents">
-<% @posts.each do |post| %>
-<div class="message-box
-  <%= "bgColor01" if post.genre_id == 2 %>">
-  <div class="message-top">
-    <span class="number"><%= post.id %>.</span>
-    <span class="title"><%= post.title %></span>
-    <div class="message-top-right">
-      <span class="genre"><%= post.genre.name %></span>
-      <span class="name"><%= post.name %></span>
+<div class="message-box-wrap">
+  <% @posts.each do |post| %>
+  <div class="message-box
+    <%= "bgColor01" if post.genre_id == 2 %>">
+    <div class="message-top">
+      <span class="number"><%= post.id %>.</span>
+      <span class="title"><%= post.title %></span>
+      <div class="message-top-right">
+        <span class="genre"><%= post.genre.name %></span>
+        <span class="name"><%= post.name %></span>
+      </div>
+    </div>
+    <div class="message-bottom">
+      <span class="content">詳 細:<%= post.content %></span>
+      <span class="date"><%= post.created_at.to_s(:datetime_jp)%></span>  
     </div>
   </div>
-  <div class="message-bottom">
-    <span class="content">詳 細:<%= post.content %></span>
-    <span class="date"><%= post.created_at.to_s(:datetime_jp)%></span>  
-  </div>
+  <% end %>
 </div>
-
-<% end %>
-
 </div>
