@@ -9,10 +9,22 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--タイトル書体 google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&family=Space+Mono&display=swap" rel="stylesheet">
+    <!--タイトル書体 google fonts-->
   </head>
 
   <body>
+  <header class="header">
+  <div class="header-inner">
+    <div class="header-left">
+      <h1><%= link_to "CloseCall", posts_path %></h1>
+    </div>
+    <div class="header-right"><%= link_to image_tag("/images/icon-write.gif"), new_post_path, class:"icon-write" %></div>
+  </div>
+  </header>
     <%= yield %>
   </body>
 </html>
